@@ -274,3 +274,14 @@ for (var l = 0; l < numberOfHours + 1; l++){
     center_ul.appendChild(center_li);
 }
 
+
+
+
+
+
+
+
+
+
+console.log(seatacTimeAndCookieArray);
+console.log(centerTimeAndCookieArray);
