@@ -135,7 +135,7 @@ console.log(cookiesSoldArray);
 
 
 
-var fullCokieDayArray = [];
+var fullCookieDayArray = [];
 
 
 
