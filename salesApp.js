@@ -8,27 +8,8 @@ var tableContentWidth = tableWidth - 1;
 var storeNames = ['1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol Hill', 'Alki'];
 
 
-// // Cookie count arrays for each hour for each store
-// var row1 = hourlyCookieListPike;
-// console.log('Pike cookie count per hour: ' + row1);
 
-// var row2 = hourlyCookieListSeatac; 
-// console.log('SeaTac cookie count per hour: ' + row2);
-
-// var row3 = hourlyCookieListCenter;
-// console.log('Seattle Center cookie count per hour: ' + row3);
-
-// var row4 = hourlyCookieListPike;
-// console.log('Capitol Hill cookie count per hour: ' + row4);
-
-// var row5 = hourlyCookieListPike;
-// console.log('Alki cookie count per hour: ' + row5);
-
-
-// var allStoreCookiesSold = [row1, row2, row3, row4, row5];
 var storeLength = allStoreCookiesSold.length;
-
-
 
 
 
@@ -61,14 +42,6 @@ console.log(cookieTotalArray);
 for (var c = 0; c < cookieTotalArray.length; c++){
     allStoreCookiesSold[c].push(cookieTotalArray[c]);
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -107,17 +80,12 @@ for(var i = 0; i < tableWidth; i++){
     trElement1.appendChild(td_element);
 
 }
-
 cookieTable.appendChild(trElement1);
 
 
 
 
-
-
-
-
-// Will iterate 3 times, one for each table row
+// Dynamically will fill up the table with the relavent data
 for (var k = 0; k < storeLength; k++){
 
     var trElement = document.createElement('tr');
