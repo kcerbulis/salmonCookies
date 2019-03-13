@@ -125,19 +125,5 @@ for (var z = 0; z < storeNum; z++){
 
 
 
-    // Showing items on the page
-    var store_ul = document.getElementById('seaTac');
 
-    var storeTitle_li = document.createElement('h4');
-
-    storeTitle_li.textContent = storeNames[z];
-
-    store_ul.appendChild(storeTitle_li);
-
-
-    for (var l = 0; l < numberOfHours + 1; l++){
-        var store_li = document.createElement('li');
-        store_li.textContent = timeAndCookieArray[l];
-        store_ul.appendChild(store_li);
-    }
 }
