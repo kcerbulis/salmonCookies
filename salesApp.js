@@ -8,25 +8,25 @@ var tableContentWidth = tableWidth - 1;
 var storeNames = ['1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol Hill', 'Alki'];
 
 
-// Cookie count arrays for each hour for each store
-var row1 = hourlyCookieListPike;
-console.log('Pike cookie count per hour: ' + row1);
+// // Cookie count arrays for each hour for each store
+// var row1 = hourlyCookieListPike;
+// console.log('Pike cookie count per hour: ' + row1);
 
-var row2 = hourlyCookieListSeatac; 
-console.log('SeaTac cookie count per hour: ' + row2);
+// var row2 = hourlyCookieListSeatac; 
+// console.log('SeaTac cookie count per hour: ' + row2);
 
-var row3 = hourlyCookieListCenter;
-console.log('Seattle Center cookie count per hour: ' + row3);
+// var row3 = hourlyCookieListCenter;
+// console.log('Seattle Center cookie count per hour: ' + row3);
 
-var row4 = hourlyCookieListPike;
-console.log('Capitol Hill cookie count per hour: ' + row4);
+// var row4 = hourlyCookieListPike;
+// console.log('Capitol Hill cookie count per hour: ' + row4);
 
-var row5 = hourlyCookieListPike;
-console.log('Alki cookie count per hour: ' + row5);
+// var row5 = hourlyCookieListPike;
+// console.log('Alki cookie count per hour: ' + row5);
 
 
-var cookieCountStoreArray = [row1, row2, row3];
-var storeLength = cookieCountStoreArray.length;
+// var allStoreCookiesSold = [row1, row2, row3, row4, row5];
+var storeLength = allStoreCookiesSold.length;
 
 
 
@@ -41,12 +41,12 @@ var cookieTotalArray = [];
 
 
 // Calculates the total amount of cookies for each store and stores them on an Array
-for(var a = 0; a < storeLength; a++){
+for(var a = 0; a < 5; a++){
 
     var sum = 0;
 
-    for (var b = 0; b < row1.length; b++){
-        sum = sum + cookieCountStoreArray[a][b]
+    for (var b = 0; b < 15; b++){
+        sum = sum + allStoreCookiesSold[a][b]
     }
 
     cookieTotalArray.push(sum);
@@ -59,11 +59,9 @@ console.log(cookieTotalArray);
 
 // Adds the total onto the cookie arrays
 for (var c = 0; c < cookieTotalArray.length; c++){
-    cookieCountStoreArray[c].push(cookieTotalArray[c]);
+    allStoreCookiesSold[c].push(cookieTotalArray[c]);
 }
-console.log(row1);
-console.log(row2);
-console.log(row3);
+
 
 
 
@@ -130,7 +128,7 @@ for (var k = 0; k < storeLength; k++){
 
     for (var j = 0; j < tableContentWidth; j++){
         var td_element = document.createElement('td');
-        td_element.textContent = cookieCountStoreArray[k][j];
+        td_element.textContent = allStoreCookiesSold[k][j];
         trElement.appendChild(td_element);
     }
 

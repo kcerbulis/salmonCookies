@@ -2,7 +2,7 @@
 
 
 var storeNames = ['1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol Hill', 'Alki', 'Totals'];
-
+var allStoreCookiesSold = [];
 
 // Pike stores object
 var firstAndPike = {
@@ -94,6 +94,8 @@ for (var z = 0; z < storeNum; z++){
         hourlyCookieList.push(hourlyCookieCount);
     }
 
+    //Pushes all day cookies sold onto another array to get an array with all store and all cookies
+    allStoreCookiesSold.push(hourlyCookieList);
 
 
 

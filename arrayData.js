@@ -1,6 +1,8 @@
 'use strict';
 
 
+var storeNames = ['1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol Hill', 'Alki', 'Totals'];
+var allStoreCookiesSold = [];
 
 // Pike stores object
 var firstAndPike = {
@@ -64,53 +66,6 @@ function numberOfCookiesSold(customerNumber, avgCookies){
 
 
 
-//------------------------------------------1st and Pike Code (Not dry)-------------------------------------------------------------------------------------------
-
-
-// Generates a random number of customers for Pike
-function getCustomerNumberPike(){
-    var customerNumberPike = getRandomIntInclusive(firstAndPike.minCust, firstAndPike.maxCust);
-    return customerNumberPike;
-}
-
-
-
-
-
-
-var hourlyCookieListPike = [];
-
-
-// Gets the amount of cookies for each working hour and stores in onto an array
-for (var i = 0; i < numberOfHours; i++){
-    var hourlyCookieCountPike = numberOfCookiesSold(getCustomerNumberPike(), firstAndPike.avgCook)
-    
-    hourlyCookieListPike.push(hourlyCookieCountPike);
-}
-
-
-var pikeTimeAndCookieArray = [];
-
-
-// Concatinates the cookie count and the time they got sold
-for (var j = 0; j < numberOfHours; j++){
-    var pikeTimeAndCookies = workingTimeArray[j] + ': ' + hourlyCookieListPike[j] + ' cookies';
-    pikeTimeAndCookieArray.push(pikeTimeAndCookies);
-}
-
-
-
-var total = 0;
-
-
-
-// Calculates total amount of cookies and add
-for (var k = 0; k < numberOfHours; k++){
-    
-    total = total + hourlyCookieListPike[k];
-
-}
-pikeTimeAndCookieArray.push('Total: ' + total + ' cookies');
 
 
 
@@ -119,108 +74,56 @@ pikeTimeAndCookieArray.push('Total: ' + total + ' cookies');
 
 
 
-
-
-//---------------------------------------------------------------SeaTac Airport (Not Dry)-----------------------------------------------------------------
-
-// Generates a random number of customers for Pike
-function getCustomerNumberSeatac(){
-    var customerNumberSeatac = getRandomIntInclusive(seaTac.minCust, seaTac.maxCust);
-    return customerNumberSeatac;
-}
-
-var hourlyCookieListSeatac = [];
-
-
-// Gets the amount of cookies for each working hour and stores in onto an array
-for (var i = 0; i < numberOfHours; i++){
-    var hourlyCookieCountSeatac = numberOfCookiesSold(getCustomerNumberSeatac(), seaTac.avgCook)
-    
-    hourlyCookieListSeatac.push(hourlyCookieCountSeatac);
-}
+for (var z = 0; z < storeNum; z++){
 
 
 
+    // Generates a random number of customers
+    function getCustomerNumber(){
+        var customerNumber = getRandomIntInclusive(storeArray[z].minCust, storeArray[z].maxCust);
+        return customerNumber;
+    }
 
-var seatacTimeAndCookieArray = [];
-
-// Concatinates the cookie count and the time they got sold
-for (var j = 0; j < numberOfHours; j++){
-    var seatacTimeAndCookies = workingTimeArray[j] + ': ' + hourlyCookieListSeatac[j] + ' cookies';
-    seatacTimeAndCookieArray.push(seatacTimeAndCookies);
-}
-
+    var hourlyCookieList = [];
 
 
+    // Gets the amount of cookies for each working hour and stores in onto an array
+    for (var i = 0; i < numberOfHours; i++){
+        var hourlyCookieCount = numberOfCookiesSold(getCustomerNumber(), storeArray[z].avgCook)
+        
+        hourlyCookieList.push(hourlyCookieCount);
+    }
+
+    //Pushes all day cookies sold onto another array to get an array with all store and all cookies
+    allStoreCookiesSold.push(hourlyCookieList);
+
+
+
+    var timeAndCookieArray = [];
+
+    // Concatinates the cookie count and the time they got sold
+    for (var j = 0; j < numberOfHours; j++){
+        var timeAndCookies = workingTimeArray[j] + ': ' + hourlyCookieList[j] + ' cookies';
+        timeAndCookieArray.push(timeAndCookies);
+    }
 
 
 
 
-var total2 = 0;
+    var total2 = 0;
 
-// Calculates total amount of cookies and add
-for (var k = 0; k < numberOfHours; k++){
-    
-    total2 = total2 + hourlyCookieListSeatac[k];
+    // Calculates total amount of cookies and add
+    for (var k = 0; k < numberOfHours; k++){
+        
+        total2 = total2 + hourlyCookieList[k];
+
+    }
+    timeAndCookieArray.push('Total: ' + total2 + ' cookies');
+    console.log(timeAndCookieArray);
+
+
+
+
+
 
 }
-seatacTimeAndCookieArray.push('Total: ' + total2 + ' cookies');
-
-
-
-
-
-
-
-
-
-//---------------------------------------------------------------Seattle Center (Not Dry)-----------------------------------------------------------------
-
-// Generates a random number of customers for Pike    
-function getCustomerNumberCenter(){
-    var customerNumberCenter = getRandomIntInclusive(seaCenter.minCust, seaCenter.maxCust);
-    return customerNumberCenter;
-}
-
-var hourlyCookieListCenter = [];
-
-
-// Gets the amount of cookies for each working hour and stores in onto an array
-for (var i = 0; i < numberOfHours; i++){
-    var hourlyCookieCountCenter = numberOfCookiesSold(getCustomerNumberCenter(), seaCenter.avgCook)
-    
-    hourlyCookieListCenter.push(hourlyCookieCountCenter);
-}
-
-
-
-
-var centerTimeAndCookieArray = [];
-
-// Concatinates the cookie count and the time they got sold
-for (var j = 0; j < numberOfHours; j++){
-    var centerTimeAndCookies = workingTimeArray[j] + ': ' + hourlyCookieListCenter[j] + ' cookies'; 
-    centerTimeAndCookieArray.push(centerTimeAndCookies);
-}
-
-
-
-
-
-
-
-var total2 = 0;
-
-// Calculates total amount of cookies and add
-for (var k = 0; k < numberOfHours; k++){
-    
-    total2 = total2 + hourlyCookieListCenter[k];
-
-}
-centerTimeAndCookieArray.push('Total: ' + total2 + ' cookies');
-
-
-
-
-
-
