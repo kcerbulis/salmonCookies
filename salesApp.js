@@ -5,6 +5,9 @@ var tableWidth = table_headers.length;
 var tableContentWidth = tableWidth - 1;
 
 
+var storeNames = ['1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol Hill', 'Alki'];
+
+
 // Cookie count arrays for each hour for each store
 var row1 = hourlyCookieListPike;
 console.log('Pike cookie count per hour: ' + row1);
@@ -15,6 +18,11 @@ console.log('SeaTac cookie count per hour: ' + row2);
 var row3 = hourlyCookieListCenter;
 console.log('Seattle Center cookie count per hour: ' + row3);
 
+var row4 = hourlyCookieListPike;
+console.log('Capitol Hill cookie count per hour: ' + row4);
+
+var row5 = hourlyCookieListPike;
+console.log('Alki cookie count per hour: ' + row5);
 
 
 var cookieCountStoreArray = [row1, row2, row3];
@@ -100,66 +108,31 @@ for(var i = 0; i < tableWidth; i++){
     td_element.textContent = table_headers[i];
     trElement1.appendChild(td_element);
 
-  }
-
-  cookieTable.appendChild(trElement1);
-
-
-
-
-
-
-
-
-
-//  Second row (First data row)
-var trElement2 = document.createElement('tr');
-
-var th_element = document.createElement('th');
-th_element.textContent = '1st and Pike';
-trElement2.appendChild(th_element);
-
-for (var j = 0; j < tableContentWidth; j++){
-    var td_element = document.createElement('td');
-    td_element.textContent = row1[j];
-    trElement2.appendChild(td_element);
 }
 
-cookieTable.appendChild(trElement2);
+cookieTable.appendChild(trElement1);
 
 
 
 
 
-//  Third row (Second data row)
-var trElement3 = document.createElement('tr');
 
-var th_element2 = document.createElement('th');
-th_element2.textContent = 'SeaTac Airport';
-trElement3.appendChild(th_element2);
 
-for (var j = 0; j < tableContentWidth; j++){
-    var td_element = document.createElement('td');
-    td_element.textContent = row2[j];
-    trElement3.appendChild(td_element);
+
+// Will iterate 3 times, one for each table row
+for (var k = 0; k < storeLength; k++){
+
+    var trElement = document.createElement('tr');
+
+    var th_element = document.createElement('th');
+    th_element.textContent = storeNames[k];
+    trElement.appendChild(th_element);
+
+    for (var j = 0; j < tableContentWidth; j++){
+        var td_element = document.createElement('td');
+        td_element.textContent = cookieCountStoreArray[k][j];
+        trElement.appendChild(td_element);
+    }
+
+    cookieTable.appendChild(trElement);
 }
-
-cookieTable.appendChild(trElement3);
-
-
-
-
-//  Third row (Second data row)
-var trElement4 = document.createElement('tr');
-
-var th_element3 = document.createElement('th');
-th_element3.textContent = 'Seattle Center';
-trElement4.appendChild(th_element3);
-
-for (var j = 0; j < tableContentWidth; j++){
-    var td_element = document.createElement('td');
-    td_element.textContent = row3[j];
-    trElement4.appendChild(td_element);
-}
-
-cookieTable.appendChild(trElement4);
