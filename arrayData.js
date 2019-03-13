@@ -1,44 +1,72 @@
 'use strict';
 
 
-var storeNames = ['1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol Hill', 'Alki', 'Totals'];
 var allStoreCookiesSold = [];
 
-// Pike stores object
-var firstAndPike = {
-    minCust: 23,
-    maxCust: 65,
-    avgCook: 6.3
+
+// ------------------------------------------------------Test Code----------------------------------------------------------------------------
+
+
+
+
+
+var storeObjectArray = [];
+
+
+// Constructor function for creating store objects
+function Store(name, minCust, maxCust, avgCook){
+    this.name = name;
+    this.minCust = minCust;
+    this.maxCust = maxCust;
+    this.avgCook = avgCook;
+
+    storeObjectArray.push(this);
 };
 
-// SeaTac Airport object
-var seaTac = {
-    minCust: 3,
-    maxCust: 24,
-    avgCook: 1.2
-};
 
-// Seattle Center object
-var seaCenter = {
-    minCust: 11,
-    maxCust: 38,
-    avgCook: 3.7  
-};
 
-// Capitol Hill object
-var capHill = {
-    minCust: 20,
-    maxCust: 38,
-    avgCook: 2.3  
-};
+var firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
 
-// Alki object
-var alki = {
-    minCust: 2,
-    maxCust: 16,
-    avgCook: 4.6  
-};
 
+var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
+
+
+var seaCenter = new Store('Seattle Center', 11, 38, 3.7);
+
+
+var capHill = new Store('Capitol Hill', 20, 38, 2.3);
+
+
+var alki = new Store('Alki', 2, 16, 4.6);
+
+
+
+
+
+console.log(storeObjectArray);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------
 // An array that stores all of stores and their objects
 var storeArray = [firstAndPike, seaTac, seaCenter, capHill, alki];
 var storeNum = storeArray.length;
@@ -80,7 +108,7 @@ for (var z = 0; z < storeNum; z++){
 
     // Generates a random number of customers
     function getCustomerNumber(){
-        var customerNumber = getRandomIntInclusive(storeArray[z].minCust, storeArray[z].maxCust);
+        var customerNumber = getRandomIntInclusive(storeObjectArray[z].minCust, storeObjectArray[z].maxCust);
         return customerNumber;
     }
 
@@ -89,7 +117,7 @@ for (var z = 0; z < storeNum; z++){
 
     // Gets the amount of cookies for each working hour and stores in onto an array
     for (var i = 0; i < numberOfHours; i++){
-        var hourlyCookieCount = numberOfCookiesSold(getCustomerNumber(), storeArray[z].avgCook)
+        var hourlyCookieCount = numberOfCookiesSold(getCustomerNumber(), storeObjectArray[z].avgCook)
         
         hourlyCookieList.push(hourlyCookieCount);
     }
@@ -119,11 +147,4 @@ for (var z = 0; z < storeNum; z++){
 
     }
     timeAndCookieArray.push('Total: ' + total2 + ' cookies');
-    console.log(timeAndCookieArray);
-
-
-
-
-
-
 }

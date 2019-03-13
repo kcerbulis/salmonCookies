@@ -39,6 +39,60 @@ var alki = {
     avgCook: 4.6  
 };
 
+
+
+// ------------------------------------------------------Not yet implementes (Probably wont need to be for lab 6)---------------------------------------------------------------------------
+
+var storeArrayTest = [];
+
+
+// Constructor function for creating store objects
+function Store(name, minCust, maxCust, avgCook){
+    this.name = name;
+    this.minCust = minCust;
+    this.maxCust = maxCust;
+    this.avgCook = avgCook;
+
+    storeArrayTest.push(this);
+};
+
+
+
+var firstAndPike = new Store('1st and Pike', 23, 65, 6.3);
+
+
+var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
+
+
+var seaCenter = new Store('Seattle Center', 11, 38, 3.7);
+
+
+var capHill = new Store('Capitol Hill', 20, 38, 2.3);
+
+
+var alki = new Store('Alki', 2, 16, 4.6);
+
+
+
+
+
+console.log(storeArrayTest);
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 // An array that stores all of stores and their objects
 var storeArray = [firstAndPike, seaTac, seaCenter, capHill, alki];
 var storeNum = storeArray.length;
@@ -119,7 +173,7 @@ for (var z = 0; z < storeNum; z++){
 
     }
     timeAndCookieArray.push('Total: ' + total2 + ' cookies');
-    console.log(timeAndCookieArray);
+    
 
 
 
