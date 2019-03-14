@@ -12,23 +12,6 @@ var storeNames = ['1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol H
 
 
 
-var storeCount = storeObjectArray.length;
-
-
-
-
-var eachHourTotal = [];
-// Calculates the total for for each working hour across all stores
-for (var k = 0; k < tableWorkingTimeWidth; k++){
-    var result = 0;
-    for (var e = 0; e < storeCount; e++){
-        result = result + allStoreCookiesSold[e][k];
-    }
-    eachHourTotal.push(result);
-}
-console.log(eachHourTotal);
-
-
 
 
 
@@ -36,17 +19,69 @@ console.log(eachHourTotal);
 
 var cookieTotalArray = [];
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log(allStoreCookiesSold);
+
 // Calculates the total amount of cookies for each store and stores them on an Array
-for(var a = 0; a < 5; a++){
+var inc = 0;
+var storeCount = storeObjectArray.length;
+
+console.log(storeObjectArray);
+console.log(`storageObjArr Len: ${storeObjectArray.length}`);
+
+for(var a = 0; a < storeCount; a++){
 
     var sum = 0;
-
+    console.log(`here: ${inc+=1}`);
+    console.log(allStoreCookiesSold);
+    var inc2=0;
     for (var b = 0; b < tableWorkingTimeWidth; b++){
-        sum = sum + allStoreCookiesSold[a][b]
+        console.log(`here2: ${inc2+=1} & my value is ${allStoreCookiesSold[a][b]}`);
+        sum += allStoreCookiesSold[a][b]
     }
 
     cookieTotalArray.push(sum);
+    
 }
+
+
+
+
+
+
+var eachHourTotal = [];
+// Calculates the total for for each working hour across all stores
+console.log('tableWorkingTimeWidth')
+console.log(tableWorkingTimeWidth)
+for (var k = 0; k < tableWorkingTimeWidth; k++){
+    var result = 0;
+    console.log('ran');
+    for (var e = 0; e < storeCount; e++){
+        console.log('last words')
+        console.log(allStoreCookiesSold)
+        result = result + allStoreCookiesSold[e][k];
+    }
+    eachHourTotal.push(result);
+}
+// allStoreCookiesSold.push(eachHourTotalArray);
+// console.log(eachHourTotal);
+// cookieTotalArray.push(eachHourTotal);
+
+
+
 
 
 
