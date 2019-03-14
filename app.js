@@ -94,7 +94,7 @@ console.log(storeArrayTest);
 
 
 // An array that stores all of stores and their objects
-var storeArray = [firstAndPike, seaTac, seaCenter, capHill, alki];
+
 var storeNum = storeArray.length;
 
 

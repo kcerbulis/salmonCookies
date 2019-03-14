@@ -8,10 +8,6 @@ var tableWorkingTimeWidth = tableWidth - 2;
 
 
 
-var storeNames = ['1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol Hill', 'Alki'];
-
-
-
 
 
 
@@ -37,13 +33,13 @@ console.log(allStoreCookiesSold);
 
 // Calculates the total amount of cookies for each store and stores them on an Array
 var inc = 0;
-var storeCount = storeObjectArray.length;
+
+
 
 console.log(storeObjectArray);
 console.log(`storageObjArr Len: ${storeObjectArray.length}`);
 
 for(var a = 0; a < storeCount; a++){
-
     var sum = 0;
     console.log(`here: ${inc+=1}`);
     console.log(allStoreCookiesSold);
@@ -56,6 +52,42 @@ for(var a = 0; a < storeCount; a++){
     cookieTotalArray.push(sum);
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

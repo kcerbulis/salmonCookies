@@ -3,11 +3,10 @@
 
 
 
-
 // ------------------------------------------------------Test Code----------------------------------------------------------------------------
 
 
-
+var allStoreCookiesSold = [];
 
 
 var storeObjectArray = [];
@@ -22,6 +21,7 @@ function Store(name, minCust, maxCust, avgCook){
 
     storeObjectArray.push(this);
 };
+
 
 
 
@@ -40,33 +40,11 @@ var capHill = new Store('Capitol Hill', 20, 38, 2.3);
 var alki = new Store('Alki', 2, 16, 4.6);
 
 
-var testTable = new Store('Test table', 70, 13, 2.3);
+
+var storeCount = storeObjectArray.length;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ---------------------------------------------------------------------------------------------------------------------------------------------
-// An array that stores all of stores and their objects
-var storeArray = [firstAndPike, seaTac, seaCenter, capHill, alki];
-var storeNum = storeArray.length;
 
 
 
@@ -93,13 +71,7 @@ function numberOfCookiesSold(customerNumber, avgCookies){
 
 
 
-
-
-
-
-
-
-for (var z = 0; z < storeNum; z++){
+for (var z = 0; z < storeCount; z++){
 
 
 
